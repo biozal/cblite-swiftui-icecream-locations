@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D63440427D7D36900212631 /* IceCreamLocatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6343F427D7D36900212631 /* IceCreamLocatorApp.swift */; };
+		0D63440527D7D36900212631 /* IceCreamLocatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6343F427D7D36900212631 /* IceCreamLocatorApp.swift */; };
+		0D63440627D7D36900212631 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6343F527D7D36900212631 /* ContentView.swift */; };
+		0D63440727D7D36900212631 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6343F527D7D36900212631 /* ContentView.swift */; };
+		0D63440827D7D36900212631 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D6343F627D7D36900212631 /* Assets.xcassets */; };
+		0D63440927D7D36900212631 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D6343F627D7D36900212631 /* Assets.xcassets */; };
+		0D63441727D7D4AE00212631 /* icecream.cblite2 in Resources */ = {isa = PBXBuildFile; fileRef = 0D63441627D7D4AE00212631 /* icecream.cblite2 */; };
+		0D63441827D7D4AE00212631 /* icecream.cblite2 in Resources */ = {isa = PBXBuildFile; fileRef = 0D63441627D7D4AE00212631 /* icecream.cblite2 */; };
+		0D63441B27D7D51500212631 /* CouchbaseLiteSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0D63441A27D7D51500212631 /* CouchbaseLiteSwift */; };
+		0D63441D27D7FC0200212631 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63441C27D7FC0200212631 /* Repository.swift */; };
+		0D63441E27D7FC0200212631 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63441C27D7FC0200212631 /* Repository.swift */; };
+		0D63442127D7FE1200212631 /* IceCreamLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63442027D7FE1200212631 /* IceCreamLocation.swift */; };
+		0D63442227D7FE1200212631 /* IceCreamLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63442027D7FE1200212631 /* IceCreamLocation.swift */; };
+		0D63442527D7FE6800212631 /* IceCreamLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63442427D7FE6800212631 /* IceCreamLocationRepository.swift */; };
+		0D63442627D7FE6800212631 /* IceCreamLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63442427D7FE6800212631 /* IceCreamLocationRepository.swift */; };
+		0D63442927D8096600212631 /* CouchbaseLiteSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0D63442827D8096600212631 /* CouchbaseLiteSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D6343F427D7D36900212631 /* IceCreamLocatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamLocatorApp.swift; sourceTree = "<group>"; };
+		0D6343F527D7D36900212631 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0D6343F627D7D36900212631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D6343FB27D7D36900212631 /* IceCreamLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceCreamLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D63440127D7D36900212631 /* IceCreamLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceCreamLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D63440327D7D36900212631 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		0D63441627D7D4AE00212631 /* icecream.cblite2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icecream.cblite2; sourceTree = "<group>"; };
+		0D63441C27D7FC0200212631 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		0D63442027D7FE1200212631 /* IceCreamLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamLocation.swift; sourceTree = "<group>"; };
+		0D63442427D7FE6800212631 /* IceCreamLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamLocationRepository.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D6343F827D7D36900212631 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D63441B27D7D51500212631 /* CouchbaseLiteSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D6343FE27D7D36900212631 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D63442927D8096600212631 /* CouchbaseLiteSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D6343EE27D7D36800212631 = {
+			isa = PBXGroup;
+			children = (
+				0D6343F327D7D36900212631 /* Shared */,
+				0D63440227D7D36900212631 /* macOS */,
+				0D6343FC27D7D36900212631 /* Products */,
+				0D63442727D8096600212631 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0D6343F327D7D36900212631 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0D63442327D7FE5000212631 /* Data */,
+				0D63441F27D7FDEA00212631 /* DomainObjects */,
+				0D63441327D7D44200212631 /* prebuild */,
+				0D6343F427D7D36900212631 /* IceCreamLocatorApp.swift */,
+				0D6343F527D7D36900212631 /* ContentView.swift */,
+				0D6343F627D7D36900212631 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		0D6343FC27D7D36900212631 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D6343FB27D7D36900212631 /* IceCreamLocator.app */,
+				0D63440127D7D36900212631 /* IceCreamLocator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D63440227D7D36900212631 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				0D63440327D7D36900212631 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		0D63441327D7D44200212631 /* prebuild */ = {
+			isa = PBXGroup;
+			children = (
+				0D63441627D7D4AE00212631 /* icecream.cblite2 */,
+			);
+			path = prebuild;
+			sourceTree = "<group>";
+		};
+		0D63441F27D7FDEA00212631 /* DomainObjects */ = {
+			isa = PBXGroup;
+			children = (
+				0D63442027D7FE1200212631 /* IceCreamLocation.swift */,
+			);
+			path = DomainObjects;
+			sourceTree = "<group>";
+		};
+		0D63442327D7FE5000212631 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0D63441C27D7FC0200212631 /* Repository.swift */,
+				0D63442427D7FE6800212631 /* IceCreamLocationRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0D63442727D8096600212631 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D6343FA27D7D36900212631 /* IceCreamLocator (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D63440C27D7D36900212631 /* Build configuration list for PBXNativeTarget "IceCreamLocator (iOS)" */;
+			buildPhases = (
+				0D6343F727D7D36900212631 /* Sources */,
+				0D6343F827D7D36900212631 /* Frameworks */,
+				0D6343F927D7D36900212631 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IceCreamLocator (iOS)";
+			packageProductDependencies = (
+				0D63441A27D7D51500212631 /* CouchbaseLiteSwift */,
+			);
+			productName = "IceCreamLocator (iOS)";
+			productReference = 0D6343FB27D7D36900212631 /* IceCreamLocator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D63440027D7D36900212631 /* IceCreamLocator (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D63440F27D7D36900212631 /* Build configuration list for PBXNativeTarget "IceCreamLocator (macOS)" */;
+			buildPhases = (
+				0D6343FD27D7D36900212631 /* Sources */,
+				0D6343FE27D7D36900212631 /* Frameworks */,
+				0D6343FF27D7D36900212631 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IceCreamLocator (macOS)";
+			packageProductDependencies = (
+				0D63442827D8096600212631 /* CouchbaseLiteSwift */,
+			);
+			productName = "IceCreamLocator (macOS)";
+			productReference = 0D63440127D7D36900212631 /* IceCreamLocator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D6343EF27D7D36800212631 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					0D6343FA27D7D36900212631 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					0D63440027D7D36900212631 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 0D6343F227D7D36800212631 /* Build configuration list for PBXProject "IceCreamLocator" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0D6343EE27D7D36800212631;
+			packageReferences = (
+				0D63441927D7D51500212631 /* XCRemoteSwiftPackageReference "couchbase-lite-swift-ee" */,
+			);
+			productRefGroup = 0D6343FC27D7D36900212631 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D6343FA27D7D36900212631 /* IceCreamLocator (iOS) */,
+				0D63440027D7D36900212631 /* IceCreamLocator (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D6343F927D7D36900212631 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D63441727D7D4AE00212631 /* icecream.cblite2 in Resources */,
+				0D63440827D7D36900212631 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D6343FF27D7D36900212631 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D63441827D7D4AE00212631 /* icecream.cblite2 in Resources */,
+				0D63440927D7D36900212631 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D6343F727D7D36900212631 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D63440627D7D36900212631 /* ContentView.swift in Sources */,
+				0D63440427D7D36900212631 /* IceCreamLocatorApp.swift in Sources */,
+				0D63442527D7FE6800212631 /* IceCreamLocationRepository.swift in Sources */,
+				0D63442127D7FE1200212631 /* IceCreamLocation.swift in Sources */,
+				0D63441D27D7FC0200212631 /* Repository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D6343FD27D7D36900212631 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D63440727D7D36900212631 /* ContentView.swift in Sources */,
+				0D63440527D7D36900212631 /* IceCreamLocatorApp.swift in Sources */,
+				0D63442627D7FE6800212631 /* IceCreamLocationRepository.swift in Sources */,
+				0D63442227D7FE1200212631 /* IceCreamLocation.swift in Sources */,
+				0D63441E27D7FC0200212631 /* Repository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0D63440A27D7D36900212631 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0D63440B27D7D36900212631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0D63440D27D7D36900212631 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5224A8CWX3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.couchbase.examples.IceCreamLocator;
+				PRODUCT_NAME = IceCreamLocator;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D63440E27D7D36900212631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5224A8CWX3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.couchbase.examples.IceCreamLocator;
+				PRODUCT_NAME = IceCreamLocator;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D63441027D7D36900212631 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5224A8CWX3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.couchbase.examples.IceCreamLocator;
+				PRODUCT_NAME = IceCreamLocator;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0D63441127D7D36900212631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5224A8CWX3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.couchbase.examples.IceCreamLocator;
+				PRODUCT_NAME = IceCreamLocator;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D6343F227D7D36800212631 /* Build configuration list for PBXProject "IceCreamLocator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D63440A27D7D36900212631 /* Debug */,
+				0D63440B27D7D36900212631 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D63440C27D7D36900212631 /* Build configuration list for PBXNativeTarget "IceCreamLocator (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D63440D27D7D36900212631 /* Debug */,
+				0D63440E27D7D36900212631 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D63440F27D7D36900212631 /* Build configuration list for PBXNativeTarget "IceCreamLocator (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D63441027D7D36900212631 /* Debug */,
+				0D63441127D7D36900212631 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0D63441927D7D51500212631 /* XCRemoteSwiftPackageReference "couchbase-lite-swift-ee" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/couchbase/couchbase-lite-swift-ee.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0D63441A27D7D51500212631 /* CouchbaseLiteSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D63441927D7D51500212631 /* XCRemoteSwiftPackageReference "couchbase-lite-swift-ee" */;
+			productName = CouchbaseLiteSwift;
+		};
+		0D63442827D8096600212631 /* CouchbaseLiteSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0D63441927D7D51500212631 /* XCRemoteSwiftPackageReference "couchbase-lite-swift-ee" */;
+			productName = CouchbaseLiteSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0D6343EF27D7D36800212631 /* Project object */;
+}

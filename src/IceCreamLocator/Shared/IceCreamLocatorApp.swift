@@ -11,7 +11,7 @@ import SwiftUI
 struct IceCreamLocatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            IceCreamListView()
         }
     }
 }

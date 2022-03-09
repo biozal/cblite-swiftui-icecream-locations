@@ -90,7 +90,7 @@ class IceCreamLocationRepository: Repository {
         do {
             //valiate we have a database connection and it's open
             if let doc = _db?.document(withID: id) {
-                if let data = doc.toJSON().data(using: <#T##String.Encoding#>){
+                if let data = doc.toJSON().data(using: .utf8) {
                     let location = try JSONDecoder().decode(Location.self, from: data)
                     subject.send(location)
                     subject.send(completion: .finished)

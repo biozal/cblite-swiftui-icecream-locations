@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct IceCreamListView: View {
+    @StateObject private var viewModel = IceCreamListViewModel()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(viewModel.unfilteredLocations) { location in
+            Text(location.name)
+                .padding()
+            
+        }
     }
 }
 

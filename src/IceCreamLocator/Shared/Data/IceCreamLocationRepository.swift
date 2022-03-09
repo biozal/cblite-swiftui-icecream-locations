@@ -27,6 +27,8 @@ class IceCreamLocationRepository: Repository {
     fileprivate var _applicationDocumentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last
     fileprivate var _applicationSupportDirectory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).last
     
+    var iceCreamLocationList = CurrentValueSubject<[IceCreamLocation], Error>([])
+    
     init() {
         Database.log.console.domains = .all
         //this will log EVERYTHING - it's a lot of information to go through
@@ -105,11 +107,23 @@ class IceCreamLocationRepository: Repository {
         return subject.eraseToAnyPublisher()
     }
     
-    func list() -> AnyPublisher<[IceCreamLocation], Error> {
-        let subject = PassthroughSubject<[IceCreamLocation], Error>()
-        //todo get list of icecream locations
-        
-        return subject.eraseToAnyPublisher()
+    func getList() -> Void {
+        do {
+            if let query = try _db?.createQuery("SELECT id, properties.`addr:city`, properties.`addr:housenumber`, properties.`addr:postcode`, properties.`addr:street`, properties.`addr:state`, properties.name FROM _ WHERE properties.name <> null ") {
+                var results: [IceCreamLocation] = []
+                for result in try query.execute() {
+                    if let data = result.toJSON().data(using: .utf8){
+                        let location = try JSONDecoder().decode(IceCreamLocation.self, from: data)
+                        results.append(location)
+                    }
+                }
+                self.iceCreamLocationList.send(results)
+                self.iceCreamLocationList.send(completion: .finished)
+            }
+        } catch {
+            print("**Error**: \(error)")
+            self.iceCreamLocationList.send(completion: .failure(DbError.unknown))
+        }
     }
     
     func add(_ document: Location, id: String) -> AnyPublisher<Void, Error> {

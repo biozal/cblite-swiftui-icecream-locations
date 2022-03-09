@@ -8,19 +8,17 @@
 import Foundation
 
 // MARK: - Ice Cream Location
-struct Location: Codable {
+struct Location: Codable, Identifiable {
     let geometry: Geometry
     let id: String
     let properties: Properties
     let type: String
 }
 
-struct IceCreamLocation : Codable {
+struct IceCreamLocation : Codable, Identifiable {
     let id: String
     let name: String
-    let address: String
-    let city: String
-    let state: String
+    let addrCity, addrHousenumber, addrPostcode, addrState, addrStreet: String?
 }
 
 // MARK: - Geometry

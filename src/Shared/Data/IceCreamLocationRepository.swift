@@ -72,19 +72,35 @@ class IceCreamLocationRepository: Repository {
                 }
                 //get handle to db
                 _db = try Database(name: _dbName, config: options)
-                
-                try createIceCreamIndexes()
             }
             else {
                 _db = try Database(name: _dbName, config: options)
             }
+            try createIceCreamIndexes()
         } catch {
+            print (error)
             fatalError("Closing because of error: \(error)")
         }
     }
     
     fileprivate func createIceCreamIndexes() throws {
         
+        //create first query index
+        try _db?.deleteIndex(forName: "idx_location_name")
+        let simpleIndex = ValueIndexConfiguration(["properties.name"])
+        try _db?.createIndex(simpleIndex, name: "idx_location_name")
+        
+        //create second query index
+        try _db?.deleteIndex(forName: "idx_location_name_city")
+        //let secondIndex = ValueIndexConfiguration(["properties.name", "properties.addr:city"])
+        let secondIndex = IndexBuilder.valueIndex(items:
+                                                  ValueIndexItem.expression(Expression.property("properties.name")),
+                                                  ValueIndexItem.expression(Expression.property("`properties.addr:city`")))
+        try _db?.createIndex(secondIndex, withName: "idx_location_name_city")
+        
+        //create third query index
+//          let simpleIndex = ValueIndexConfiguration(["name"])
+//          try _db?.createIndex(simpleIndex, name: "idx_location_name")
     }
     
     func get(id: String) -> AnyPublisher<Location, Error> {
@@ -107,10 +123,12 @@ class IceCreamLocationRepository: Repository {
         return subject.eraseToAnyPublisher()
     }
     
-    func getList() -> Void {
+    func getListSimpleName() -> Void {
         do {
-            if let query = try _db?.createQuery("SELECT id, properties.`addr:city`, properties.`addr:housenumber`, properties.`addr:postcode`, properties.`addr:street`, properties.`addr:state`, properties.name FROM _ WHERE properties.name <> null ") {
+            if let query = try _db?.createQuery("SELECT id, properties.`addr:city`, properties.`addr:housenumber`, properties.`addr:postcode`, properties.`addr:street`, properties.`addr:state`, properties.name FROM _ WHERE properties.name <> \"\" ORDER BY properties.name") {
                 var results: [IceCreamLocation] = []
+                let explain = try query.explain()
+                print ("**EXPLAIN** \(explain)")
                 for result in try query.execute() {
                     if let data = result.toJSON().data(using: .utf8){
                         let location = try JSONDecoder().decode(IceCreamLocation.self, from: data)
@@ -126,23 +144,24 @@ class IceCreamLocationRepository: Repository {
         }
     }
     
-    func add(_ document: Location, id: String) -> AnyPublisher<Void, Error> {
-        let subject = PassthroughSubject<Void, Error>()
-        return subject.eraseToAnyPublisher()
-        
+    func getListByCity() -> Void {
+        do {
+            if let query = try _db?.createQuery("SELECT id, properties.`addr:city`, properties.`addr:housenumber`, properties.`addr:postcode`, properties.`addr:street`, properties.`addr:state`, properties.name FROM _ WHERE properties.name <> \"\" AND properties.`addr:city` <> \"\" ORDER BY properties.`addr:city`") {
+                var results: [IceCreamLocation] = []
+                let explain = try query.explain()
+                print ("**EXPLAIN** \(explain)")
+                for result in try query.execute() {
+                    if let data = result.toJSON().data(using: .utf8){
+                        let location = try JSONDecoder().decode(IceCreamLocation.self, from: data)
+                        results.append(location)
+                    }
+                }
+                self.iceCreamLocationList.send(results)
+                self.iceCreamLocationList.send(completion: .finished)
+            }
+        } catch {
+            print("**Error**: \(error)")
+            self.iceCreamLocationList.send(completion: .failure(DbError.unknown))
+        }
     }
-    
-    func edit(_ document: Location) -> AnyPublisher<Void, Error> {
-        let subject = PassthroughSubject<Void, Error>()
-        return subject.eraseToAnyPublisher()
-        
-    }
-    
-    func delete(_ id: String) -> AnyPublisher<Void, Error> {
-        let subject = PassthroughSubject<Void, Error>()
-        return subject.eraseToAnyPublisher()
-    }
-    
-    
-    
 }

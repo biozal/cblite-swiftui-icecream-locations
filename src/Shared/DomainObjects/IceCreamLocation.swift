@@ -19,6 +19,15 @@ struct IceCreamLocation : Codable, Identifiable {
     let id: String
     let name: String
     let addrCity, addrHousenumber, addrPostcode, addrState, addrStreet: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case addrCity = "addr:city"
+        case addrHousenumber = "addr:housenumber"
+        case addrPostcode = "addr:postcode"
+        case addrState = "addr:state"
+        case addrStreet = "addr:street"
+        case id, name
+    }
 }
 
 // MARK: - Geometry

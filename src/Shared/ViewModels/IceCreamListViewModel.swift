@@ -33,7 +33,15 @@ extension IceCreamListView {
                     self?.unfilteredLocations = value
                 }).store(in: &subscriptions)
             
-            _repository.getList()
+            //first example
+            _repository.getListSimpleName()
+            
+            //second example
+            //_repository.getListByCity()
+            
+            //third example
+            //_repository.getListSimpleNameExplain()
+            
         }
         
     }

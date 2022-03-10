@@ -40,10 +40,7 @@ extension IceCreamListView {
             //_repository.getListByTypeCityOrderName()
             
             //second example
-            //_repository.getListByStateGeorgia()
-            
-            //second example fixed
-            _repository.getListByStateGeorgiaFixed()
+            _repository.getListByStateGeorgia()
         }
     }
 }

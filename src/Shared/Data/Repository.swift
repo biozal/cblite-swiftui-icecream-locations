@@ -9,10 +9,6 @@ import Foundation
 import Combine
 
 protocol Repository {
-    associatedtype T
-    associatedtype TD
-    
     func getListByTypeCityOrderName() -> Void
     func getListByStateGeorgia() -> Void
-    func getListByStateGeorgiaFixed() -> Void
 }

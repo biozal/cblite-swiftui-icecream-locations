@@ -10,8 +10,6 @@ import Combine
 import CouchbaseLiteSwift
 
 class IceCreamLocationRepository: Repository {
-    typealias T = IceCreamLocation
-    typealias TD = Location
     
     enum DbError : LocalizedError {
         case nilDatabase
@@ -87,12 +85,12 @@ class IceCreamLocationRepository: Repository {
         
         //create first query index
         try _db?.deleteIndex(forName: "idx_location_type_city_name")
-        let simpleIndex = ValueIndexConfiguration(["properties.name", "properties.addrCity", "type"])
+        let simpleIndex = ValueIndexConfiguration(["properties.name","properties.addrCity","type"])
         try _db?.createIndex(simpleIndex, name: "idx_location_type_city_name")
         
         //create second query index
         try _db?.deleteIndex(forName: "idx_location_type_city_state_name")
-        let secondIndex = ValueIndexConfiguration(["properties.name","properties.addrCity", "type", "properties.addrState"])
+        let secondIndex = ValueIndexConfiguration(["properties.name","properties.addrCity","type","properties.addrState"])
         try _db?.createIndex(secondIndex, name: "idx_location_type_city_state_name")
         
         //create third query index
@@ -123,28 +121,7 @@ class IceCreamLocationRepository: Repository {
     
     func getListByStateGeorgia() -> Void {
         do {
-            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE  properties.addrCity IS NOT NULL AND properties.addrState = \"GA\" AND type=\"Feature\" ORDER BY properties.addrCity") {
-                var results: [IceCreamLocation] = []
-                let explain = try query.explain()
-                print ("**EXPLAIN** \(explain)")
-                for result in try query.execute() {
-                    if let data = result.toJSON().data(using: .utf8){
-                        let location = try JSONDecoder().decode(IceCreamLocation.self, from: data)
-                        results.append(location)
-                    }
-                }
-                self.iceCreamLocationList.send(results)
-                self.iceCreamLocationList.send(completion: .finished)
-            }
-        } catch {
-            print("**Error**: \(error)")
-            self.iceCreamLocationList.send(completion: .failure(DbError.unknown))
-        }
-    }
-    
-    func getListByStateGeorgiaFixed() -> Void {
-        do {
-            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE properties.addrCity IS NOT NULL AND type = \"Feature\" ORDER BY properties.name") {
+            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE  properties.addrCity IS NOT NULL AND properties.addrState = \"GA\" AND type=\"Feature\" ORDER BY properties.name") {
                 var results: [IceCreamLocation] = []
                 let explain = try query.explain()
                 print ("**EXPLAIN** \(explain)")

@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D4E009227D8577000851C77 /* IceCreamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E009127D8577000851C77 /* IceCreamDetailView.swift */; };
-		0D4E009327D8577000851C77 /* IceCreamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E009127D8577000851C77 /* IceCreamDetailView.swift */; };
 		0D4E009527D8585200851C77 /* IceCreamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E009427D8585200851C77 /* IceCreamListViewModel.swift */; };
 		0D4E009627D8585200851C77 /* IceCreamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E009427D8585200851C77 /* IceCreamListViewModel.swift */; };
-		0D4E009927D8588300851C77 /* IceCreamDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E009827D8588300851C77 /* IceCreamDetailViewModel.swift */; };
-		0D4E009A27D8588300851C77 /* IceCreamDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4E009827D8588300851C77 /* IceCreamDetailViewModel.swift */; };
 		0D63440427D7D36900212631 /* IceCreamLocatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6343F427D7D36900212631 /* IceCreamLocatorApp.swift */; };
 		0D63440527D7D36900212631 /* IceCreamLocatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6343F427D7D36900212631 /* IceCreamLocatorApp.swift */; };
 		0D63440627D7D36900212631 /* IceCreamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6343F527D7D36900212631 /* IceCreamListView.swift */; };
@@ -32,9 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D4E009127D8577000851C77 /* IceCreamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamDetailView.swift; sourceTree = "<group>"; };
 		0D4E009427D8585200851C77 /* IceCreamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamListViewModel.swift; sourceTree = "<group>"; };
-		0D4E009827D8588300851C77 /* IceCreamDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamDetailViewModel.swift; sourceTree = "<group>"; };
 		0D6343F427D7D36900212631 /* IceCreamLocatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamLocatorApp.swift; sourceTree = "<group>"; };
 		0D6343F527D7D36900212631 /* IceCreamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreamListView.swift; sourceTree = "<group>"; };
 		0D6343F627D7D36900212631 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				0D6343F527D7D36900212631 /* IceCreamListView.swift */,
-				0D4E009127D8577000851C77 /* IceCreamDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -80,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				0D4E009427D8585200851C77 /* IceCreamListViewModel.swift */,
-				0D4E009827D8588300851C77 /* IceCreamDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -267,13 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D4E009927D8588300851C77 /* IceCreamDetailViewModel.swift in Sources */,
 				0D63440627D7D36900212631 /* IceCreamListView.swift in Sources */,
 				0D4E009527D8585200851C77 /* IceCreamListViewModel.swift in Sources */,
 				0D63440427D7D36900212631 /* IceCreamLocatorApp.swift in Sources */,
 				0D63442527D7FE6800212631 /* IceCreamLocationRepository.swift in Sources */,
 				0D63442127D7FE1200212631 /* IceCreamLocation.swift in Sources */,
-				0D4E009227D8577000851C77 /* IceCreamDetailView.swift in Sources */,
 				0D63441D27D7FC0200212631 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,13 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D4E009A27D8588300851C77 /* IceCreamDetailViewModel.swift in Sources */,
 				0D63440727D7D36900212631 /* IceCreamListView.swift in Sources */,
 				0D4E009627D8585200851C77 /* IceCreamListViewModel.swift in Sources */,
 				0D63440527D7D36900212631 /* IceCreamLocatorApp.swift in Sources */,
 				0D63442627D7FE6800212631 /* IceCreamLocationRepository.swift in Sources */,
 				0D63442227D7FE1200212631 /* IceCreamLocation.swift in Sources */,
-				0D4E009327D8577000851C77 /* IceCreamDetailView.swift in Sources */,
 				0D63441E27D7FC0200212631 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

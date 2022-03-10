@@ -92,7 +92,7 @@ class IceCreamLocationRepository: Repository {
         
         //create second query index
         try _db?.deleteIndex(forName: "idx_location_type_city_state_name")
-        let secondIndex = ValueIndexConfiguration(["properties.addrCity", "type", "properties.addrState"])
+        let secondIndex = ValueIndexConfiguration(["properties.name","properties.addrCity", "type", "properties.addrState"])
         try _db?.createIndex(secondIndex, name: "idx_location_type_city_state_name")
         
         //create third query index
@@ -144,7 +144,7 @@ class IceCreamLocationRepository: Repository {
     
     func getListByStateGeorgiaFixed() -> Void {
         do {
-            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE properties.addrCity <> \"\" AND type = \"Feature\"") {
+            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE properties.addrCity IS NOT NULL AND type = \"Feature\" ORDER BY properties.name") {
                 var results: [IceCreamLocation] = []
                 let explain = try query.explain()
                 print ("**EXPLAIN** \(explain)")

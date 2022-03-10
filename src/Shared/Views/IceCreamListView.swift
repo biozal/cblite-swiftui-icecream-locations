@@ -19,9 +19,12 @@ struct IceCreamListView: View {
             }.padding(.bottom, 10)
         }
     }
-
+    
     func nameView(location: IceCreamLocation) -> some View {
-        return AnyView(Text(location.name))
+        if let name = location.name {
+            return AnyView(Text(name))
+        }
+        return AnyView(EmptyView())
     }
     
     func streetView(location: IceCreamLocation) -> some View {
@@ -40,11 +43,11 @@ struct IceCreamListView: View {
            let addrState = location.addrState,
            let addrPostalCode = location.addrPostcode {
             return AnyView (
-                    Text(addrCity.trimmingCharacters(in: .whitespacesAndNewlines))
-                    + Text(", ")
-                    + Text(addrState)
-                    + Text("  ")
-                    + Text(addrPostalCode)
+                Text(addrCity.trimmingCharacters(in: .whitespacesAndNewlines))
+                + Text(", ")
+                + Text(addrState)
+                + Text("  ")
+                + Text(addrPostalCode)
             )
         }
         return AnyView(EmptyView())

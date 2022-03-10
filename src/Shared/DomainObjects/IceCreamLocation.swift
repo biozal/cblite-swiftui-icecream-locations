@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Ice Cream Location
+// MARK: - Open Street Map Location
 struct Location: Codable, Identifiable {
     let geometry: Geometry
     let id: String
@@ -15,18 +15,19 @@ struct Location: Codable, Identifiable {
     let type: String
 }
 
+// MARK: - Ice Cream Location
 struct IceCreamLocation : Codable, Identifiable {
     let id: String
-    let name: String
-    let addrCity, addrHousenumber, addrPostcode, addrState, addrStreet: String?
+    let name, addrCity, addrHousenumber, addrPostcode, addrState, addrStreet: String?
     
     enum CodingKeys: String, CodingKey {
-        case addrCity = "addr:city"
-        case addrHousenumber = "addr:housenumber"
-        case addrPostcode = "addr:postcode"
-        case addrState = "addr:state"
-        case addrStreet = "addr:street"
-        case id, name
+        case addrCity
+        case addrHousenumber
+        case addrPostcode
+        case addrState
+        case addrStreet
+        case name
+        case id
     }
 }
 
@@ -43,11 +44,11 @@ struct Properties: Codable {
     let dcgisSquare, id, name, source: String
 
     enum CodingKeys: String, CodingKey {
-        case addrCity = "addr:city"
-        case addrHousenumber = "addr:housenumber"
-        case addrPostcode = "addr:postcode"
-        case addrState = "addr:state"
-        case addrStreet = "addr:street"
+        case addrCity
+        case addrHousenumber
+        case addrPostcode
+        case addrState
+        case addrStreet
         case amenity, dataset
         case dcgisLot = "dcgis:lot"
         case dcgisSquare = "dcgis:square"

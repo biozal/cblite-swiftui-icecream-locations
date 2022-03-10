@@ -86,46 +86,23 @@ class IceCreamLocationRepository: Repository {
     fileprivate func createIceCreamIndexes() throws {
         
         //create first query index
-        try _db?.deleteIndex(forName: "idx_location_name")
-        let simpleIndex = ValueIndexConfiguration(["properties.name"])
-        try _db?.createIndex(simpleIndex, name: "idx_location_name")
+        try _db?.deleteIndex(forName: "idx_location_type_city_name")
+        let simpleIndex = ValueIndexConfiguration(["properties.name", "properties.addrCity", "type"])
+        try _db?.createIndex(simpleIndex, name: "idx_location_type_city_name")
         
         //create second query index
-        try _db?.deleteIndex(forName: "idx_location_name_city")
-        //let secondIndex = ValueIndexConfiguration(["properties.name", "properties.addr:city"])
-        let secondIndex = IndexBuilder.valueIndex(items:
-                                                  ValueIndexItem.expression(Expression.property("properties.name")),
-                                                  ValueIndexItem.expression(Expression.property("`properties.addr:city`")))
-        try _db?.createIndex(secondIndex, withName: "idx_location_name_city")
+        try _db?.deleteIndex(forName: "idx_location_type_city_state_name")
+        let secondIndex = ValueIndexConfiguration(["properties.addrCity", "type", "properties.addrState"])
+        try _db?.createIndex(secondIndex, name: "idx_location_type_city_state_name")
         
         //create third query index
-//          let simpleIndex = ValueIndexConfiguration(["name"])
-//          try _db?.createIndex(simpleIndex, name: "idx_location_name")
+        //let simpleIndex = ValueIndexConfiguration(["name"])
+        //try _db?.createIndex(simpleIndex, name: "idx_location_name")
     }
     
-    func get(id: String) -> AnyPublisher<Location, Error> {
-        let subject = PassthroughSubject<Location, Error>()
+    func getListByTypeCityOrderName() -> Void {
         do {
-            //valiate we have a database connection and it's open
-            if let doc = _db?.document(withID: id) {
-                if let data = doc.toJSON().data(using: .utf8) {
-                    let location = try JSONDecoder().decode(Location.self, from: data)
-                    subject.send(location)
-                    subject.send(completion: .finished)
-                    return subject.eraseToAnyPublisher()
-                }
-            }
-        } catch {
-            subject.send(completion: .failure(DbError.nilDocument))
-        }
-        
-        subject.send(completion: .failure(DbError.nilDatabase))
-        return subject.eraseToAnyPublisher()
-    }
-    
-    func getListSimpleName() -> Void {
-        do {
-            if let query = try _db?.createQuery("SELECT id, properties.`addr:city`, properties.`addr:housenumber`, properties.`addr:postcode`, properties.`addr:street`, properties.`addr:state`, properties.name FROM _ WHERE properties.name <> \"\" ORDER BY properties.name") {
+            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE properties.addrCity <> \"\" AND type = \"Feature\" ORDER BY properties.name") {
                 var results: [IceCreamLocation] = []
                 let explain = try query.explain()
                 print ("**EXPLAIN** \(explain)")
@@ -144,9 +121,30 @@ class IceCreamLocationRepository: Repository {
         }
     }
     
-    func getListByCity() -> Void {
+    func getListByStateGeorgia() -> Void {
         do {
-            if let query = try _db?.createQuery("SELECT id, properties.`addr:city`, properties.`addr:housenumber`, properties.`addr:postcode`, properties.`addr:street`, properties.`addr:state`, properties.name FROM _ WHERE properties.name <> \"\" AND properties.`addr:city` <> \"\" ORDER BY properties.`addr:city`") {
+            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE  properties.addrCity IS NOT NULL AND properties.addrState = \"GA\" AND type=\"Feature\" ORDER BY properties.addrCity") {
+                var results: [IceCreamLocation] = []
+                let explain = try query.explain()
+                print ("**EXPLAIN** \(explain)")
+                for result in try query.execute() {
+                    if let data = result.toJSON().data(using: .utf8){
+                        let location = try JSONDecoder().decode(IceCreamLocation.self, from: data)
+                        results.append(location)
+                    }
+                }
+                self.iceCreamLocationList.send(results)
+                self.iceCreamLocationList.send(completion: .finished)
+            }
+        } catch {
+            print("**Error**: \(error)")
+            self.iceCreamLocationList.send(completion: .failure(DbError.unknown))
+        }
+    }
+    
+    func getListByStateGeorgiaFixed() -> Void {
+        do {
+            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE properties.addrCity <> \"\" AND type = \"Feature\"") {
                 var results: [IceCreamLocation] = []
                 let explain = try query.explain()
                 print ("**EXPLAIN** \(explain)")

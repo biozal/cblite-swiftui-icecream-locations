@@ -7,9 +7,12 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 extension IceCreamListView {
     @MainActor class IceCreamListViewModel : ObservableObject {
+        
+        var searchText = ""
         
         fileprivate var _repository: IceCreamLocationRepository
         
@@ -34,15 +37,13 @@ extension IceCreamListView {
                 }).store(in: &subscriptions)
             
             //first example
-            _repository.getListSimpleName()
+            //_repository.getListByTypeCityOrderName()
             
             //second example
-            //_repository.getListByCity()
+            //_repository.getListByStateGeorgia()
             
-            //third example
-            //_repository.getListSimpleNameExplain()
-            
+            //second example fixed
+            _repository.getListByStateGeorgiaFixed()
         }
-        
     }
 }

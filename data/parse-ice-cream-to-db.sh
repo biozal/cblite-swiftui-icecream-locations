@@ -1,7 +1,12 @@
 #!/bin/bash
+
 #define filename
 filename="us-south-ice-cream.json"
-dbFileName='us-south-ice-cream.cblite2'
+dbFileName='icecream.cblite2'
+
+#create the database
+./cblite --create $dbFileName 
+quit
 
 #get amount of records to get out of file and split into new files
 length=`cat $filename | jq -r '.features | length'`

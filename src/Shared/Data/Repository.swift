@@ -12,7 +12,7 @@ protocol Repository {
     associatedtype T
     associatedtype TD
     
-    func get(id: String) -> AnyPublisher<TD, Error>
-    func getListByCity() -> Void
-    func getListSimpleName() -> Void
+    func getListByTypeCityOrderName() -> Void
+    func getListByStateGeorgia() -> Void
+    func getListByStateGeorgiaFixed() -> Void
 }

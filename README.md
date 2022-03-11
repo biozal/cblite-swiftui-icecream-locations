@@ -3,7 +3,7 @@
 ## Overview 
 As we all know, code is expensive to maintain, and the more complex the code, the more cost associated with maintaining it.  Since the beginning of time, software developers have worked very hard to achieve the goal of code reusability. 
 
-Couchbase Mobile 3.0 introduces support for SQL++ queries. As a developer, the first thought that came to mind was sharing queries used in REST API projects and mobile applications. But, is this a good idea? Let’s explore this question using sample data and a proof of concept mobile application.
+Couchbase Mobile 3.0 introduces support for SQL++ queries. As a developer, the first thought that came to mind was sharing queries used in projects targeting Couchbase Server and a mobile application. But, is this a good idea? Let’s explore this question using sample data and a proof of concept mobile application.
 
 For full information please read the blog post here.
 

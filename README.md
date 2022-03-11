@@ -42,7 +42,7 @@ The sample data used for the following tests comes from the [OpenStreetMap](http
 
 The data set contains all the shops that sell Ice Cream in the United States.  An example JSON document is listed below:
 
-
+```json
 {
   "type": "Feature",
   "id": "node/472242349",
@@ -67,6 +67,7 @@ The data set contains all the shops that sell Ice Cream in the United States.  A
     ]
   }
 }
+```
 
 As you can see, this is a versatile data set for testing because it has properties embedded into the documents.
 

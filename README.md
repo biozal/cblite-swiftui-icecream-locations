@@ -72,7 +72,7 @@ I assume you already have Couchbase Server running.  If you do not, directions o
 
 From the Coucbhase Web Console create a bucket called `icecream`.  Take the default stats as the documents you will import don't take a lot of space.  If you don't know how to create a bucket, you can follow the documentation [here](https://docs.couchbase.com/server/current/manage/manage-buckets/create-bucket.html).  
 
-The Couchbase documentation on [importing documents](https://docs.couchbase.com/server/current/manage/import-documents/import-documents.html) can be used to walk you through importing the sample data found in the data folder named [us-south-ice-cream-cbserver.json](data/us-south-ice-cream-cbserver.json).  
+The Couchbase documentation on [importing documents](https://docs.couchbase.com/server/current/manage/import-documents/import-documents.html) can be used to walk you through importing the sample data found in the data folder ([us-south-ice-cream-cbserver.json](data/us-south-ice-cream-cbserver.json)).  
 
 Once you have imported the data, you can use the SQL statements in the [create-indexes-couchbase-server.sql](data/create-indexes-couchbase-server.sql) file found in the data folder to create the indexes I used in the blog article.  All the queries used in the blog article can be found in the [article-cbserver-sql-statements.sql](data/article-cbserver-sql-statements.sql) file.
 

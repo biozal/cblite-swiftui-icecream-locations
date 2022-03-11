@@ -66,9 +66,6 @@ The data set contains all the shops that sell Ice Cream in the United States.  A
   }
 }
 ```
-
-As you can see, this is a versatile data set for testing because it has properties embedded into the documents.
-
 ## Importing Data into a bucket in Couchbase Server
 
 I assume you already have Couchbase Server running.  If you do not, directions on how to get it setup can be found on the [Couchbase Developer Portal](https://developer.couchbase.com/tutorial-couchbase-installation-options).

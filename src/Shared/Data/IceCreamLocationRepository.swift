@@ -121,7 +121,7 @@ class IceCreamLocationRepository: Repository {
     
     func getListByStateGeorgia() -> Void {
         do {
-            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE  properties.addrCity IS NOT NULL AND properties.addrState = \"GA\" AND type=\"Feature\" ORDER BY properties.name") {
+            if let query = try _db?.createQuery("SELECT id, properties.addrCity, properties.addrHousenumber, properties.addrPostcode, properties.addrStreet, properties.addrState, properties.name FROM _ WHERE  properties.addrCity NOT NULL AND properties.addrState = \"GA\" AND type=\"Feature\" ORDER BY properties.name") {
                 var results: [IceCreamLocation] = []
                 let explain = try query.explain()
                 print ("**EXPLAIN** \(explain)")

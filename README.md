@@ -79,7 +79,7 @@ From the Coucbhase Web Console create a bucket called `icecream`.  Take the defa
 
 The Couchbase documentation on [importing documents](https://docs.couchbase.com/server/current/manage/import-documents/import-documents.html) can be used to walk you through importing the sample data found in the data folder named us-south-ice-cream-cbserver.json.  
 
-Once you have imported the data, you can use the SQL statements in the create-indexes-couchbase-server.sql file found in the data folder to create the indexes I used in the blog article.  
+Once you have imported the data, you can use the SQL statements in the [create-indexes-couchbase-server.sql](data/create-indexes-couchbase-server.sql) file found in the data folder to create the indexes I used in the blog article.  All the queries used in the blog article can be found in the [article-cbserver-sql-statements.sql](data/article-cbserver-sql-statements.sql) file.
 
 ## SwiftUI Application 
 
